@@ -15,7 +15,8 @@ pipeline {
             steps {
                 script {
               app = docker.build("kowshik/test")   
-                }   }
+                }  
+            }
         }
         stage('Push Docker Image'){
             when {
