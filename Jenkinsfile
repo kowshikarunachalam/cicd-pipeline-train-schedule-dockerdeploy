@@ -8,5 +8,12 @@ pipeline {
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
+        stage('BuildDockerImage'){
+            when {
+                branch 'master'
+            }
+            steps {
+              app = docker.built("kowshik/test")   
+           }
     }
 }
