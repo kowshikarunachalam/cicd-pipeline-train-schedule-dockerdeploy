@@ -1,4 +1,5 @@
-pipeline {
+
+steps {pipeline {
     agent any
     stages {
         stage('Build') {
@@ -32,6 +33,7 @@ pipeline {
             }
         }
            stage('DeployDockerImage'){
+               steps {
                withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
                 script {
                        sh "sshpass -p '$USERPASS' -v ssh -o StrictHostKeyChecking=no $USERNAME@$prod_ip \"docker pull willbla/train-schedule:${env.BUILD_NUMBER}\""
@@ -47,3 +49,4 @@ pipeline {
             }
         }
     }
+}
