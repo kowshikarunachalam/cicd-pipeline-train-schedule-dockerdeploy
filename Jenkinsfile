@@ -30,6 +30,7 @@ pipeline {
                     }
                 }
             }
+        }
            stage('DeployDockerImage'){
                withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
                 script {
