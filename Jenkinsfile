@@ -15,5 +15,5 @@ pipeline {
             steps {
               app = docker.built("kowshik/test")   
            }
-    }
+        }   
 }
