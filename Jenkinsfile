@@ -13,8 +13,9 @@ pipeline {
                 branch 'master'
             }
             steps {
+                script {
               app = docker.built("kowshik/test")   
-           }
+                }   }
         }   
 }
 }
