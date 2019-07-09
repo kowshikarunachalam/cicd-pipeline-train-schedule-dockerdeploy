@@ -17,7 +17,7 @@ pipeline {
               app = docker.build("kowshik/test")   
                 }   }
         }
-        stage('PushDockerImage'){
+        stage('Push Docker Image'){
             when {
                 branch 'master'
             }
