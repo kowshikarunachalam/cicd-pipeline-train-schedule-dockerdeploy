@@ -14,7 +14,7 @@ pipeline {
             }
             steps {
                 script {
-              app = docker.built("kowshik/test")   
+              app = docker.build("kowshik/test")   
                 }   }
         }   
 }
